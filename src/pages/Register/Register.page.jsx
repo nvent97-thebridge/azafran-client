@@ -1,8 +1,11 @@
 import { Button, Flex, Input, Typography } from "antd";
+import { useNavigate } from "react-router";
 import { useState } from "react";
 const { Title } = Typography;
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
@@ -12,6 +15,22 @@ const Register = () => {
 
   const handleRegisterButtonClick = () => {
     console.log(user, password, repeatPassword);
+    fetch("http://localhost:8080/register", {
+      headers: {
+        "Content-type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({ username: user, password: password }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          console.log("Usuario registrado");
+          navigate("/login");
+        } else {
+            console.error("error found", res.body)
+        }
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
