@@ -1,5 +1,5 @@
 import { Button, Flex, Input, Typography } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const { Title } = Typography;
 
 const Register = () => {
@@ -8,6 +8,12 @@ const Register = () => {
     password: "",
     repeatPassword: "",
   });
+
+  const isButtonEnabled =
+    formData.user &&
+    formData.password &&
+    formData.repeatPassword &&
+    formData.password == formData.repeatPassword;
 
   const handleRegisterButtonClick = () => {
     console.log(formData);
@@ -45,7 +51,7 @@ const Register = () => {
           })
         }
       />
-      <Button type="primary" onClick={handleRegisterButtonClick}>
+      <Button disabled={!isButtonEnabled} type="primary" onClick={handleRegisterButtonClick}>
         Register
       </Button>
     </Flex>
