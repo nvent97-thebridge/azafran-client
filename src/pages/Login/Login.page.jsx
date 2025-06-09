@@ -7,8 +7,22 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const handleLoginButtonClick = () => {
-    console.log(user, password)
-  }
+    console.log(user, password);
+    fetch("http://localhost:8080/login/", {
+      headers: {
+        "Content-type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({ username: user, password: password }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+  };
 
   return (
     <Flex gap={"8px"} vertical style={{ width: "400px" }}>
