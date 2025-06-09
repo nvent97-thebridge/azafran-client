@@ -1,5 +1,5 @@
 import { Button, Flex, Input, Typography } from "antd";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useState } from "react";
 const { Title } = Typography;
 

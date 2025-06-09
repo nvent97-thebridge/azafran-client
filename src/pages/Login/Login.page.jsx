@@ -22,6 +22,7 @@ const Login = () => {
           setErrorMsg(data.msg);
         } else {
           localStorage.setItem("accessToken", data.accessToken)
+          // Take user to ingredient list
         }
       })
       .catch((err) => {
