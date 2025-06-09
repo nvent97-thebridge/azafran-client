@@ -21,7 +21,7 @@ const Login = () => {
         if (res.status >= 400 && data.msg) {
           setErrorMsg(data.msg);
         } else {
-          console.log(data);
+          localStorage.setItem("access_token", data.accessToken)
         }
       })
       .catch((err) => {
