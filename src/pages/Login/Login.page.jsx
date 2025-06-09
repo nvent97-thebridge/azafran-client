@@ -5,6 +5,7 @@ const { Title } = Typography;
 const Login = () => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleLoginButtonClick = () => {
     console.log(user, password);
@@ -15,12 +16,16 @@ const Login = () => {
       method: "POST",
       body: JSON.stringify({ username: user, password: password }),
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(async (res) => {
+        const data = await res.json();
+        if (res.status >= 400 && data.msg) {
+          setErrorMsg(data.msg);
+        } else {
+          console.log(data);
+        }
       })
       .catch((err) => {
-        console.log(err)
+        console.warn(err);
       });
   };
 
@@ -45,6 +50,7 @@ const Login = () => {
       >
         Log in
       </Button>
+      <Typography.Text>{errorMsg}</Typography.Text>
     </Flex>
   );
 };
