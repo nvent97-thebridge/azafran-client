@@ -14,7 +14,6 @@ const Register = () => {
     user && password && repeatPassword && password == repeatPassword;
 
   const handleRegisterButtonClick = () => {
-    console.log(user, password, repeatPassword);
     fetch("http://localhost:8080/register/", {
       headers: {
         "Content-type": "application/json",
