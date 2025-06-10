@@ -13,6 +13,7 @@ const Ingredient = ({ name }) => {
       }}
     >
       <Paragraph style={{ margin: 0 }}>{name}</Paragraph>
+      <button>Algo</button>
     </Flex>
   );
 };
