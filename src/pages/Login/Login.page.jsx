@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { Button, Flex, Input, Typography } from "antd";
 const { Title } = Typography;
 
@@ -6,6 +7,7 @@ const Login = () => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const navigate = useNavigate();
 
   const handleLoginButtonClick = () => {
     console.log(user, password);
@@ -22,7 +24,7 @@ const Login = () => {
           setErrorMsg(data.msg);
         } else {
           localStorage.setItem("accessToken", data.accessToken)
-          // Take user to ingredient list
+          navigate('/');
         }
       })
       .catch((err) => {
