@@ -10,7 +10,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLoginButtonClick = () => {
-    console.log(user, password);
     fetch("http://localhost:8080/login/", {
       headers: {
         "Content-type": "application/json",

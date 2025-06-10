@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Flex, Typography } from "antd";
 import { useNavigate } from "react-router";
-const { Title, Paragraph } = Typography;
+import { Ingredient } from "../../components/Ingredient/Ingredient";
+const { Title } = Typography;
 
 const Dashboard = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -23,7 +24,6 @@ const Dashboard = () => {
       .then((res) => res.json())
       .then((data) => {
         setIngredients(data);
-        console.log(data);
       });
   }, []);
 
@@ -31,20 +31,7 @@ const Dashboard = () => {
     <Flex vertical gap={"5px"}>
       <Title>Dashboard</Title>
       {ingredients.map((ingredient, index) => {
-        return (
-          <Flex
-            justify="center"
-            align="center"
-            key={index}
-            style={{
-              border: "1px solid black",
-              borderRadius: "8px",
-              padding: "5px",
-            }}
-          >
-            <Paragraph style={{ margin: 0 }}>{ingredient.name}</Paragraph>
-          </Flex>
-        );
+        return <Ingredient name={ingredient.name} key={index} />;
       })}
     </Flex>
   );
