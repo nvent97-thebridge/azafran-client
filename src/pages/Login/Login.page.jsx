@@ -20,7 +20,7 @@ const Login = () => {
     })
       .then(async (res) => {
         const data = await res.json();
-        if (res.status >= 400 && data.msg) {
+        if (!res.ok && data.msg) {
           setErrorMsg(data.msg);
         } else {
           localStorage.setItem("accessToken", data.accessToken)
