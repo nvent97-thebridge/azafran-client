@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from "react-router";
+import { Route, Routes } from "react-router";
 import { Dashboard } from "../pages/Dashboard/Dashboard.page";
 
 const AuthedRoutes = () => {
