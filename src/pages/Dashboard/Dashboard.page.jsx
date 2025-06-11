@@ -31,7 +31,13 @@ const Dashboard = () => {
     <Flex vertical gap={"5px"}>
       <Title>Dashboard</Title>
       {ingredients.map((ingredient, index) => {
-        return <Ingredient name={ingredient.name} key={index} />;
+        return (
+          <Ingredient
+            name={ingredient.name}
+            key={index}
+            handleButtonClick={() => console.log(ingredient.name)}
+          />
+        );
       })}
     </Flex>
   );
