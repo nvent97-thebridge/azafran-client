@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
 import { Flex, Typography } from "antd";
-import { useNavigate } from "react-router";
 import { Ingredient } from "../../components/Ingredient/Ingredient";
 const { Title } = Typography;
 
 const Dashboard = () => {
   const [ingredients, setIngredients] = useState([]);
-  const navigate = useNavigate();
-
-  if (!localStorage.getItem("accessToken")) {
-    navigate("/login");
-  }
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
@@ -35,7 +29,6 @@ const Dashboard = () => {
           <Ingredient
             name={ingredient.name}
             key={index}
-            handleButtonClick={() => console.log(ingredient.name)}
           />
         );
       })}

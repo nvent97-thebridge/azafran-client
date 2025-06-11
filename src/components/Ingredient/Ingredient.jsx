@@ -1,7 +1,7 @@
 import { Flex, Typography } from "antd";
 const { Paragraph } = Typography;
 
-const Ingredient = ({ name, handleButtonClick }) => {
+const Ingredient = ({ name }) => {
   return (
     <Flex
       justify="center"
@@ -13,7 +13,6 @@ const Ingredient = ({ name, handleButtonClick }) => {
       }}
     >
       <Paragraph style={{ margin: 0 }}>{name}</Paragraph>
-      <button onClick={handleButtonClick}>Hola</button>
     </Flex>
   );
 };
