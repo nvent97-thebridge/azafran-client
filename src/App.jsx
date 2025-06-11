@@ -4,10 +4,11 @@ import { AuthedRoutes } from "./routes/AuthedRoutes";
 import "./App.css";
 
 function App() {
+  const userLoggedIn = localStorage.getItem("accessToken")
+
   return (
     <BrowserRouter>
-      <UnAuthedRoutes />
-      <AuthedRoutes />
+      {userLoggedIn ? <AuthedRoutes /> : <UnAuthedRoutes />}
     </BrowserRouter>
   );
 }
