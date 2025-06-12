@@ -12,7 +12,7 @@ const Title = () => {
     const dog: Dog = {
         id: 1,
         breed: "Golden",
-        name: "pipi",
+        name: "pipi2",
     }
 
     return (
