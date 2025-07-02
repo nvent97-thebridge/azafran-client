@@ -1,0 +1,32 @@
+.dashboardHeader {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+
+    width: fit-content;
+    height: 100vh;
+
+    padding: 1rem;
+    gap: 1rem;
+
+    background-color: #920202;
+    color: white;
+}
+
+.dashboardUserData {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.userAvatar {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.userName {
+    font-weight: bolder;
+}

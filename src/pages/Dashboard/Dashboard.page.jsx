@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Flex, Typography } from "antd";
 import { Ingredient } from "../../components/Ingredient/Ingredient";
+
+import { DashboardHeader } from "../../components/organisms/DashboardHeader/DashBoardHeader";
+
 const { Title } = Typography;
 
 const Dashboard = () => {
@@ -22,17 +25,22 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Flex vertical gap={"5px"}>
-      <Title>Dashboard</Title>
-      {ingredients.map((ingredient, index) => {
-        return (
-          <Ingredient
-            name={ingredient.name}
-            key={index}
-          />
-        );
-      })}
-    </Flex>
+    <>
+      <DashboardHeader />
+      <main className="dashboardMain">
+        <Flex vertical gap={"5px"}>
+          <Title>Dashboard</Title>
+          {ingredients.map((ingredient, index) => {
+            return (
+              <Ingredient
+                name={ingredient.name}
+                key={index}
+              />
+            );
+          })}
+        </Flex>
+      </main>
+    </>
   );
 };
 
