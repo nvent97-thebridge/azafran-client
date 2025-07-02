@@ -7,7 +7,7 @@ const PantryPage = () => {
     const [ingredients, setIngredients] = useState([]);
 
     useEffect(() => {
-        const token = localStorage.getItem("accessToken");
+        const accessToken = localStorage.getItem("accessToken");
         fetch("http://localhost:8080/ingredients", {
             method: "GET",
             headers: {
