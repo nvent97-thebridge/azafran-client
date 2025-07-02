@@ -4,7 +4,7 @@ import { AuthedRoutes } from "./routes/AuthedRoutes";
 import "./App.css";
 
 function App() {
-  const userLoggedIn = localStorage.getItem("accessToken")
+  const userLoggedIn = localStorage.getItem("access_token")
 
   return (
     <BrowserRouter>
