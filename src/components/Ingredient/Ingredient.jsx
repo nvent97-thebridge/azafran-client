@@ -8,9 +8,7 @@ const Ingredient = ({ name, handleButtonClick }) => {
   const [ingredients, setIngredients] = useState([]);
   const navigate = useNavigate();
 
-  if (!localStorage.getItem("access_token")) {
-    navigate("/login");
-  }
+
   useEffect(() => {
     const accessToken = localStorage.getItem("access_token");
     if (!localStorage.getItem("access_token")) {
