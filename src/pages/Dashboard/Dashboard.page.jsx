@@ -7,7 +7,7 @@ const Dashboard = () => {
   const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
-    const accessToken = localStorage.getItem("accessToken");
+    const accessToken = localStorage.getItem("access_token");
     fetch("http://localhost:8080/ingredients", {
       method: "GET",
       headers: {
