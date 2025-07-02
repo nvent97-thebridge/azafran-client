@@ -12,7 +12,7 @@ const PantryPage = () => {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
+                Authorization: accessToken,
             },
         })
             .then((res) => {
