@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router";
+import { Route, Routes, Navigate, useNavigate } from "react-router";
 import { Dashboard } from "../pages/Dashboard/Dashboard.page";
 import { Ingredient } from "../components/Ingredient/Ingredient"
 import { useEffect } from "react";
