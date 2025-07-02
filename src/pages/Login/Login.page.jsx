@@ -22,7 +22,7 @@ const Login = () => {
         if (!res.ok && data.msg) {
           setErrorMsg(data.msg);
         } else {
-          localStorage.setItem("accessToken", data.accessToken)
+          localStorage.setItem("access_token", data.accessToken)
           window.location.href = "/";
         }
       })
@@ -33,7 +33,7 @@ const Login = () => {
 
   return (
     <Flex gap={"8px"} vertical style={{ width: "400px" }}>
-      <Title/>
+      <Title />
       <Input
         value={user}
         onChange={(event) => setUser(event.target.value)}
