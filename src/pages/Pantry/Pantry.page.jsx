@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Button from "../../components/Button/Button";
-import Ingredient from "../../components/Ingredient/Ingredient";
+import { useEffect, useState } from "react";
+import { Ingredient } from "../../components/Ingredient/Ingredient";
+import { Button } from "../../components/Button/Button";
 import "./Pantry.page.css";
 
-export default function PantryPage() {
+const PantryPage = () => {
     const [ingredients, setIngredients] = useState([]);
 
     useEffect(() => {
@@ -16,13 +16,11 @@ export default function PantryPage() {
             },
         })
             .then((res) => {
-                if (!res.ok) throw new Error("Error al cargar ingredientes");
+                if (!res.ok) throw new Error("Error loading ingredients");
                 return res.json();
             })
             .then((data) => setIngredients(data))
-            .catch((err) => {
-                console.error(err);
-            });
+            .catch(console.error);
     }, []);
 
     return (
@@ -32,17 +30,17 @@ export default function PantryPage() {
                     <h1 className="pantry-title">Pantry</h1>
                     <Button onClick={() => {}}>+ Ingredient</Button>
                 </div>
-
                 <div className="pantry-grid">
                     {ingredients.map((ing) => (
                         <Ingredient key={ing.id} name={ing.name} />
                     ))}
                 </div>
-
                 <div className="pantry-footer">
                     <Button onClick={() => {}}>Create recipe</Button>
                 </div>
             </div>
         </div>
     );
-}
+};
+
+export { PantryPage };
