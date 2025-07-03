@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Flex, Typography } from "antd";
-import { Ingredient } from "../../components/Ingredient/Ingredient";
-const { Title } = Typography;
-
+import { useNavigate } from "react-router-dom";
+import { DashboardNav } from "../DashboardNav/DashboardNav"
+const { Title, Paragraph } = Typography;
 const Dashboard = () => {
     const [ingredients, setIngredients] = useState([]);
-
     useEffect(() => {
         const accessToken = localStorage.getItem("accessToken");
         fetch("http://localhost:8080/ingredients", {
@@ -31,4 +30,4 @@ const Dashboard = () => {
     );
 };
 
-export { Dashboard };
+export { Dashboard }

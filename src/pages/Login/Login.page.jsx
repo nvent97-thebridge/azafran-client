@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Button, Flex, Input, Typography } from "antd";
+import { Link } from "react-router-dom"
 import { Title } from "../../components/Title/Title";
 
 const Login = () => {
@@ -33,7 +34,7 @@ const Login = () => {
 
   return (
     <Flex gap={"8px"} vertical style={{ width: "400px" }}>
-      <Title/>
+      <Title />
       <Input
         value={user}
         onChange={(event) => setUser(event.target.value)}
