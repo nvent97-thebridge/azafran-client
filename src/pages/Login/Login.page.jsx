@@ -23,9 +23,8 @@ const Login = () => {
         if (!res.ok && data.msg) {
           setErrorMsg(data.msg);
         } else {
-          localStorage.setItem("access_token", data.accessToken)
-          navigate("/ingredient");
-          //window.location.href = "/ingredient";
+          localStorage.setItem("accessToken", data.accessToken)
+          window.location.href = "/";
         }
       })
       .catch((err) => {

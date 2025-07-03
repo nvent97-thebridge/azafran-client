@@ -4,18 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { DashboardNav } from "../DashboardNav/DashboardNav"
 const { Title, Paragraph } = Typography;
 const Dashboard = () => {
-  // mostrarle al usuario los ingredientes que el
-  //Mismo ha puesto en su db
   const [ingredients, setIngredients] = useState([]);
 
   const navigate = useNavigate();
-
-  /*if (!localStorage.getItem("access_token")){
-    navigate("/login");
-  }*/
   useEffect(() => {
-    const accessToken = localStorage.getItem("access_token");
-    if (!localStorage.getItem("access_token")) {
+    const accessToken = localStorage.getItem("accessToken");
+    if (!localStorage.getItem("accessToken")) {
       navigate("/login");
     }
     fetch("http://localhost:8080/ingredients", {
@@ -27,7 +21,6 @@ const Dashboard = () => {
     }).then((res) => res.json())
       .then((data) => {
         setIngredients(data);
-        console.log(data)
       })
   }, [])
   return (

@@ -10,10 +10,7 @@ const Ingredient = ({ name, handleButtonClick }) => {
 
 
   useEffect(() => {
-    const accessToken = localStorage.getItem("access_token");
-    if (!localStorage.getItem("access_token")) {
-      navigate("/login");
-    }
+    const accessToken = localStorage.getItem("accessToken");
     fetch("http://localhost:8080/ingredients", {
       method: "GET",
       headers: {
