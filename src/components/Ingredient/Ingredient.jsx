@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Flex, Typography } from "antd";
 import { useNavigate } from "react-router-dom";
-import { DashboardNav } from "../../pages/DashboardNav/DashboardNav"
+//import { DashboardNav } from "../../pages/DashboardNav/DashboardNav"
 const { Paragraph } = Typography;
 
 const Ingredient = ({ name, handleButtonClick }) => {
@@ -29,7 +29,6 @@ const Ingredient = ({ name, handleButtonClick }) => {
 
   return (
     <>
-      <DashboardNav></DashboardNav>
       <Flex
         justify="center"
         vertical gap="5px"
