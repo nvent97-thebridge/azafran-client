@@ -46,4 +46,9 @@ const Ingredient = ({ name, handleButtonClick }) => {
   )
 }
 
+import "./Ingredient.css";
+
+const Ingredient = ({ name }) => <div className="ingredient-card">{name}</div>;
+
+
 export { Ingredient }
