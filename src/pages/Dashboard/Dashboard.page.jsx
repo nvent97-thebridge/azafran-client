@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { Flex, Typography } from "antd";
 import { Ingredient } from "../../components/Ingredient/Ingredient";
-
 import { DashboardHeader } from "../../components/organisms/DashboardHeader/DashBoardHeader";
+
+import "./Dashboard.page.scss";
+
+import menuIcon from "../../assets/menuicon.svg";
 
 const { Title } = Typography;
 
-const Dashboard = () => {
+export const Dashboard = () => {
   const [ingredients, setIngredients] = useState([]);
+  const [menuVisible, setMenuVisible] = useState(true);
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
@@ -26,22 +30,27 @@ const Dashboard = () => {
 
   return (
     <>
-      <DashboardHeader />
+      {!menuVisible && (
+        <button
+          className="menuBtn"
+          onClick={() => setMenuVisible(true)}
+        >
+          <img src={menuIcon} alt="Open Menu" style={{ width: 24, height: 24 }} />
+        </button>
+      )}
+
+      {menuVisible && <DashboardHeader onClose={() => setMenuVisible(false)} />}
+
       <main className="dashboardMain">
         <Flex vertical gap={"5px"}>
           <Title>Dashboard</Title>
-          {ingredients.map((ingredient, index) => {
-            return (
-              <Ingredient
-                name={ingredient.name}
-                key={index}
-              />
-            );
-          })}
+          {ingredients.map((ingredient, index) => (
+            <Ingredient name={ingredient.name} key={index} />
+          ))}
         </Flex>
       </main>
     </>
   );
 };
 
-export { Dashboard };
+

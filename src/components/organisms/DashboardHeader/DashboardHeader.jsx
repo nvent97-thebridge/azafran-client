@@ -1,20 +1,32 @@
+// DashboardHeader.jsx
+import { DashboardNav } from "../../molecules/DashboardNav/DashboardNav";
 
-import { DashboardNav } from "../../molecules/DashboardNav/DashboardNav"
+import avatar from "../../../assets/avatar.svg";
+import closeIcon from "../../../assets/closeicon.svg";
 
-import "./DashboardHeader.scss"
+import "./DashboardHeader.scss";
 
-export const DashboardHeader = () => {
+export const DashboardHeader = ({ onClose }) => {
     return (
         <header className="dashboardHeader">
+            <button className="closeBtn" onClick={onClose}>
+                <img src={closeIcon} alt="Close Menu" />
+            </button>
+
             <div className="dashboardUserData">
-                <img src="../../assets/avatar.svg" alt="avatar" className="userAvatar" />
-                <p className="userName">Username</p>
+                <div className="userData">
+                    <img src={avatar} alt="avatar" className="userAvatar" />
+                    <p className="userName">Username</p>
+                    <p className="userEmail">useremail@useremail.com</p>
+                </div>
                 <div className="userStats">
-                    <p>Ingredients: 40</p>
-                    <p>Recipes: 18</p>
+                    <p><span className="spanStat">40</span> ingredients</p>
+                    <p><span className="spanStat">18</span> recipes</p>
                 </div>
             </div>
+
             <DashboardNav />
         </header>
-    )
-}
+    );
+};
+
