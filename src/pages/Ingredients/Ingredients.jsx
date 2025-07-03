@@ -1,13 +1,10 @@
-import { useNavigate } from "react-router";
+import { useNavigate, } from "react-router";
 import { useState, useEffect, useRef, } from "react";
 import './index.css'
 const Ingredients = () => {
 
     return (
         <>
-            <script type="module">
-                @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-            </script>
             <main id="ingredients-main">
                 <section id="ingredients-header" className="">
                     <p>Pantry</p>

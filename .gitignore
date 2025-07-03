@@ -11,8 +11,6 @@ node_modules
 dist
 dist-ssr
 *.local
-*.sass
-*.css.map
 
 
 # Editor directories and files
