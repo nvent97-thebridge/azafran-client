@@ -3,13 +3,13 @@ import { Flex, Typography } from "antd";
 import { Ingredient } from "../../components/Ingredient/Ingredient";
 import { DashboardHeader } from "../../components/organisms/DashboardHeader/DashBoardHeader";
 
-import "./Dashboard.page.scss";
+import "./MainLayout.scss";
 
 import menuIcon from "../../assets/menuicon.svg";
 
 const { Title } = Typography;
 
-export const Dashboard = () => {
+export const MainLayout = ({ mainContent }) => {
   const [ingredients, setIngredients] = useState([]);
   const [menuVisible, setMenuVisible] = useState(true);
 
@@ -42,12 +42,7 @@ export const Dashboard = () => {
       {menuVisible && <DashboardHeader onClose={() => setMenuVisible(false)} />}
 
       <main className="dashboardMain">
-        <Flex vertical gap={"5px"}>
-          <Title>Dashboard</Title>
-          {ingredients.map((ingredient, index) => (
-            <Ingredient name={ingredient.name} key={index} />
-          ))}
-        </Flex>
+        {mainContent}
       </main>
     </>
   );
