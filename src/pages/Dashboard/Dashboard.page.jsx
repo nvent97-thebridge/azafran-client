@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Flex, Typography } from "antd";
 import { useNavigate } from "react-router-dom";
-//import { DashboardNav } from "../DashboardNav/DashboardNav"
+import { DashboardNav } from "../DashboardNav/DashboardNav"
 const { Title, Paragraph } = Typography;
 const Dashboard = () => {
   // mostrarle al usuario los ingredientes que el
@@ -32,6 +32,7 @@ const Dashboard = () => {
   }, [])
   return (
     <Flex vertical gap={"5px"}>
+      <DashboardNav></DashboardNav>
       <Title>Dashboard</Title>
       {ingredients.map((ingredient, index) => {
         return (<Paragraph key={index}>{ingredient.name}</Paragraph>
