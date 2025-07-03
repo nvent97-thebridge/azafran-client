@@ -22,7 +22,7 @@ const Login = () => {
         if (!res.ok && data.msg) {
           setErrorMsg(data.msg);
         } else {
-          localStorage.setItem("token", data.token)
+          localStorage.setItem("accessToken", data.accessToken)
           window.location.href = "/";
         }
       })
