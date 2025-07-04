@@ -1,14 +1,21 @@
-import { Route, Routes, Navigate } from "react-router";
-import { Dashboard } from "../pages/Dashboard/Dashboard.page";
+import { Routes, Route, Navigate } from "react-router";
 
-const AuthedRoutes = () => {
+import { MainLayout } from "../components/templates/MainLayout/MainLayout";
+import { PantryPage } from "../pages/Pantry/Pantry.page";
+
+export function AuthedRoutes() {
+  localStorage.setItem ("user","user")
+  localStorage.setItem ("password","password")
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
+      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+      <Route path="/dashboard" element={<MainLayout />} />
+      <Route
+        path="/pantry"
+        element={<MainLayout mainContent={<PantryPage />} />}
+      />
       <Route path="/profile" element={<h1>Profile</h1>} />
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>
   );
-};
-
-export { AuthedRoutes };
+}
