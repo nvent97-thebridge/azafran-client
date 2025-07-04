@@ -26,7 +26,6 @@ const Dashboard = () => {
 
     const handleAccept = () => {
         // Lógica para aceptar (puedes agregar aquí lo que necesites)
-        setIsModalOpen(false);
     };
 
     const handleCancel = () => {
