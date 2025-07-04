@@ -18,7 +18,7 @@ export const DashboardNav = () => {
         <img src={recipesIcon} alt="" className="linkIcon" />
         Your Recipes
       </Link>
-      <Link to="/settings" className="navLink">
+      <Link to="/profile" className="navLink">
         <img src={profileIcon} alt="" className="linkIcon" />
         Your Profile
       </Link>
