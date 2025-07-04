@@ -31,6 +31,7 @@ const PantryPage = () => {
       <div className="pantry-card">
         <div className="pantry-header">
           <h1 className="pantry-title">Pantry</h1>
+
           <Button
             onClick={() => {
               setShowAddIngredientModal(true);
@@ -55,8 +56,8 @@ const PantryPage = () => {
             maxWidth={600}
           >
             <Input type="text" children="Insert ingredient name" />
-            <Button children="Save" />
-            <Button children="Cancel" />
+            <Button className="btn-primary" children="Save" />
+            <Button className="btn-secondary" children="Cancel" />
           </ModalBase>
         )}
       </div>
