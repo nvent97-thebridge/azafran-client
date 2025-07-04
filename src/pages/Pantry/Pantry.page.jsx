@@ -3,6 +3,7 @@ import { Ingredient } from "../../components/molecules/Ingredient/Ingredient";
 import { Button } from "../../components/atom/Button/Button";
 import { ModalBase } from "../../components/molecules/Modal/Modal";
 import { Input } from "../../components/atom/Input/Input";
+import { Flex } from "antd";
 import "./Pantry.page.css";
 
 const PantryPage = () => {
@@ -56,12 +57,14 @@ const PantryPage = () => {
             maxWidth={600}
           >
             <Input type="text" children="Insert ingredient name" />
-            <Button className="btn-primary" children="Save" />
-            <Button
-              className="btn-secondary"
-              onClick={() => setShowAddIngredientModal(false)}
-              children="Cancel"
-            />
+            <Flex horizontal gap={10}>
+              <Button className="btn-primary" children="Save" />
+              <Button
+                className="btn-secondary"
+                onClick={() => setShowAddIngredientModal(false)}
+                children="Cancel"
+              />
+            </Flex>
           </ModalBase>
         )}
       </div>
