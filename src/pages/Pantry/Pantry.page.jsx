@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Ingredient } from "../../components/molecules/Ingredient/Ingredient";
 import { Button } from "../../components/atom/Button/Button";
 import { ModalBase } from "../../components/molecules/Modal/Modal";
+import { Input } from "../../components/atom/Input/Input";
 import "./Pantry.page.css";
 
 const PantryPage = () => {
@@ -52,7 +53,11 @@ const PantryPage = () => {
             onClose={() => setShowAddIngredientModal(false)}
             title="Add Ingredient"
             maxWidth={600}
-          />
+          >
+            <Input type="text" children="Insert ingredient name" />
+            <Button children="Save" />
+            <Button children="Cancel" />
+          </ModalBase>
         )}
       </div>
     </div>

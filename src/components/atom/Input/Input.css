@@ -1,0 +1,7 @@
+.inpt-text {
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border-color: var(--primary-color);
+  height: 27px;
+  width: 250px;
+}
