@@ -23,10 +23,9 @@ const Register = () => {
     })
       .then((res) => {
         if (res.ok) {
-          console.log("Usuario registrado");
           navigate("/login");
         } else {
-            console.error("error found", res.body)
+          console.error("error found", res.body);
         }
       })
       .catch((err) => console.error(err));
