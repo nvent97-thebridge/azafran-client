@@ -57,7 +57,11 @@ const PantryPage = () => {
           >
             <Input type="text" children="Insert ingredient name" />
             <Button className="btn-primary" children="Save" />
-            <Button className="btn-secondary" children="Cancel" />
+            <Button
+              className="btn-secondary"
+              onClick={() => setShowAddIngredientModal(false)}
+              children="Cancel"
+            />
           </ModalBase>
         )}
       </div>
