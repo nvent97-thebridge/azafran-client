@@ -2,20 +2,9 @@ import { useState } from "react";
 import { BrowserRouter } from "react-router";
 import { UnAuthedRoutes } from "./routes/UnAuthedRoutes";
 import { AuthedRoutes } from "./routes/AuthedRoutes";
-import { Modal } from "./components/Modal/Modal"; // Ajusta la ruta si es distinta
-import { Button, Flex, Input, Typography } from "antd";
-import "./App.css";
 
 function App() {
   const userLoggedIn = localStorage.getItem("accessToken");
-
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const handleCancel = () => setModalOpen(false);
-  const handlePrimary = () => {
-    alert("Confirmado.");
-    setModalOpen(false);
-  };
 
   return (
     <BrowserRouter>
