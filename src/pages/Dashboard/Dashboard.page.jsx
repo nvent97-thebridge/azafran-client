@@ -19,17 +19,22 @@ const Dashboard = () => {
             .then((res) => res.json())
             .then((data) => {
                 setIngredients(data);
+            })
+            .catch((error) => {
+                console.error("Error fetching ingredients:", error);
             });
     }, []);
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const handleAccept = () => {
-        // Lógica para aceptar (puedes agregar aquí lo que necesites)
-    };
+    const [showModal, setShowModal] = useState(false);
 
     const handleCancel = () => {
-        setIsModalOpen(false);
+        setShowModal(false);
+    };
+
+    const handleAccept = () => {};
+
+    const handleShowModal = () => {
+        setShowModal(true);
     };
 
     return (
@@ -38,20 +43,16 @@ const Dashboard = () => {
             {ingredients.map((ingredient, index) => {
                 return <Ingredient name={ingredient.name} key={index} />;
             })}
-            <Button type="primary" onClick={() => setIsModalOpen(true)}>
+            <Button type="primary" onClick={handleShowModal}>
                 Abrir Modal
             </Button>
             <ModalBase
-                open={isModalOpen}
-                onClose={handleCancel}
+                showModal={showModal}
+                handleCancel={handleCancel}
+                handleAccept={handleAccept}
                 title="Agregar ingrediente"
             >
-                {/* Contenido del modal aquí */}
                 <p>Contenido del ModalBase</p>
-                <Button type="primary" onClick={handleAccept}>
-                    Accept
-                </Button>
-                <Button onClick={handleCancel}>Cancel</Button>
             </ModalBase>
         </Flex>
     );

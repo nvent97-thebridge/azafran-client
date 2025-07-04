@@ -1,14 +1,49 @@
-import React from "react";
 import { Modal, Typography } from "antd";
 
 const { Title } = Typography;
 
-const ModalBase = ({ open, onClose, title, children, maxWidth }) => {
+const ModalBase = ({
+    showModal,
+    handleAccept,
+    handleCancel,
+    title,
+    children,
+}) => {
     return (
         <Modal
-            open={open}
-            onCancel={onClose}
-            footer={null}
+            open={showModal}
+            onCancel={handleCancel}
+            footer={[
+                <button
+                    key="cancel"
+                    style={{
+                        backgroundColor: "#fff",
+                        color: "#000",
+                        border: "none",
+                        padding: "6px 16px",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                    }}
+                    onClick={handleCancel}
+                >
+                    Cancel
+                </button>,
+                <button
+                    key="accept"
+                    type="button"
+                    style={{
+                        backgroundColor: "#1677ff",
+                        color: "#fff",
+                        border: "none",
+                        padding: "6px 16px",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                    }}
+                    onClick={handleAccept}
+                >
+                    Accept
+                </button>,
+            ]}
             title={
                 <div
                     style={{
@@ -22,9 +57,6 @@ const ModalBase = ({ open, onClose, title, children, maxWidth }) => {
                     </Title>
                 </div>
             }
-            width={maxWidth || 400}
-            bodyStyle={{ maxHeight: "70vh", overflowY: "auto" }}
-            destroyOnClose
         >
             {children}
         </Modal>
