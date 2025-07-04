@@ -1,0 +1,14 @@
+.menuOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .optionMenu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        color: #fff;
+    }
+}

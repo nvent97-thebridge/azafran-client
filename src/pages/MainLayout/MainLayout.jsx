@@ -1,7 +1,8 @@
 import { Flex, Typography } from "antd";
-import { CollapseMenu } from "../../components/Dashboard/CollapseMenu";
+import { CollapseMenu } from "../../components/MainLayout/CollapseMenu";
+import "../../Styles/Font-google-icons.css"
 
-const Dashboard = () => {
+const MainLayout = () => {
 
   return (
     <div style={{ marginLeft: 256}}>
@@ -15,4 +16,4 @@ const Dashboard = () => {
   );
 };
 
-export { Dashboard };
+export { MainLayout };
