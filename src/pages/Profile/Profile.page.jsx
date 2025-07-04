@@ -4,30 +4,30 @@ import { Button } from "../../components/atom/Button/Button";
 import "./Profile.css";
 
 const ProfilePage = () => {
-  const [username, setUsername] = useState([]);
-  const [password, setPassword] = useState([]);
+  const username = localStorage.getItem("user");
+  const password = localStorage.getItem("password");
 
-  // function datos{
-    //      setUsername(data.user)
-        //      setPassword(data.password)
-    // }
+  // function datos (data){
+  //      setUsername(data.user)
+  //      setPassword(data.password)
+  // }
 
   useEffect(() => {
-    // fetch("http://localhost:8080/profile", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then((res) => {
-    //     if (!res.ok) throw new Error("Error loading profite");
-    //     return res.json();
-    //   })
-    //   .then((data) => datos (data)}
-    //   .catch(console.error);
+    fetch("http://localhost:8080/profile", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Error loading profite");
+        return res.json();
+      })
+      .then((data) => console.log (data))
+      .catch(console.error);
   }, []);
-  setUsername(localStorage.getItem ("user"))
-  setPassword(localStorage.getItem ("password"))
+  
+  console.log (username)
   return (
     <div className="profile-wrapper">
       <div className="profile-card">
@@ -35,7 +35,8 @@ const ProfilePage = () => {
           <h1 className="profile-title">Profile</h1>
         </div>
         <div className="profile-grid">
-          <h6>Username: {username}Password:{password}</h6>
+          <h4><p>Username: {username}</p>
+          <p>Password:  {password}</p></h4>
         </div>
       </div>
     </div>
