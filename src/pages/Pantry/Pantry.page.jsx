@@ -32,7 +32,12 @@ const PantryPage = () => {
         </div>
         <div className="pantry-grid">
           {ingredients.map((ing) => (
-            <Ingredient key={ing.id} name={ing.name} />
+            <Ingredient
+              key={ing.id}
+              name={ing.name}
+              quantity={ing.quantity}
+              unit={ing.unit}
+            />
           ))}
         </div>
         <div className="pantry-footer">
