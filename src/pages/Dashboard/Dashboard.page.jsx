@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Button, Flex, Typography } from "antd";
+import { Flex, Typography } from "antd";
 import { Ingredient } from "../../components/Ingredient/Ingredient";
-import { ModalBase } from "../../components/Modal/ModalBase";
+
 const { Title } = Typography;
 
 const Dashboard = () => {
@@ -24,18 +24,6 @@ const Dashboard = () => {
                 console.error("Error fetching ingredients:", error);
             });
     }, []);
-
-    const [showModal, setShowModal] = useState(false);
-
-    const handleCancel = () => {
-        setShowModal(false);
-    };
-
-    const handleAccept = () => {};
-
-    const handleShowModal = () => {
-        setShowModal(true);
-    };
 
     return (
         <Flex vertical gap={"5px"}>
