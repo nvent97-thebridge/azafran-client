@@ -24,6 +24,15 @@ const Dashboard = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const handleAccept = () => {
+        // Lógica para aceptar (puedes agregar aquí lo que necesites)
+        setIsModalOpen(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <Flex vertical gap={"5px"}>
             <Title>Dashboard</Title>
@@ -35,13 +44,15 @@ const Dashboard = () => {
             </Button>
             <ModalBase
                 open={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
+                onClose={handleCancel}
                 title="Agregar ingrediente"
             >
                 {/* Contenido del modal aquí */}
                 <p>Contenido del ModalBase</p>
-                <Button type="primary">Accept</Button>
-                <Button onClick={() => setIsModalOpen(false)}>Cancel</Button>
+                <Button type="primary" onClick={handleAccept}>
+                    Accept
+                </Button>
+                <Button onClick={handleCancel}>Cancel</Button>
             </ModalBase>
         </Flex>
     );
