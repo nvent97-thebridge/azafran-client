@@ -7,6 +7,10 @@ import logoutIcon from "../../../assets/logouticon.svg";
 
 import "./DashboardNav.scss";
 
+const LogOutButtonClick =  () => {
+  localStorage.clear();
+  Navigate("/login");
+}
 export const DashboardNav = () => {
   return (
     <nav className="dashboardNav">
@@ -22,7 +26,7 @@ export const DashboardNav = () => {
         <img src={profileIcon} alt="" className="linkIcon" />
         Your Profile
       </Link>
-      <Link to="/logout" className="navLink">
+      <Link to="/logout" onClick={LogOutButtonClick} className="navLink">
         <img src={logoutIcon} alt="" className="linkIcon" />
         Logout
       </Link>
