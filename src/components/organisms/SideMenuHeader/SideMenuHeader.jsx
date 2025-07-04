@@ -1,5 +1,4 @@
-// SideMenuHeader.jsx
-import { DashboardNav } from "../../molecules/DashboardNav/DashboardNav";
+import { SideMenuNav } from "../../molecules/SideMenuNav/SideMenuNav";
 
 import avatar from "../../../assets/avatar.svg";
 import closeIcon from "../../../assets/closeicon.svg";
@@ -8,7 +7,7 @@ import "./SideMenuHeader.scss";
 
 export const SideMenuHeader = ({ onClose }) => {
   return (
-    <header className="SideMenuHeader">
+    <header className="sideMenuHeader">
       <button className="closeBtn" onClick={onClose}>
         <img src={closeIcon} alt="Close Menu" />
       </button>
@@ -29,7 +28,7 @@ export const SideMenuHeader = ({ onClose }) => {
         </div>
       </div>
 
-      <DashboardNav />
+      <SideMenuNav />
     </header>
   );
 };
