@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-
+import { useEffect } from "react";
 import pantryIcon from "../../../assets/pantryicon.svg";
 import recipesIcon from "../../../assets/recipesicon.svg";
 import profileIcon from "../../../assets/profileicon.svg";
@@ -7,6 +7,10 @@ import logoutIcon from "../../../assets/logouticon.svg";
 
 import "./DashboardNav.scss";
 
+const LogOutButtonCkick = () => {
+  localStorage.clear();
+  navigate("/login")
+}
 export const DashboardNav = () => {
   return (
     <nav className="dashboardNav">
@@ -22,7 +26,7 @@ export const DashboardNav = () => {
         <img src={profileIcon} alt="" className="linkIcon" />
         Your Profile
       </Link>
-      <Link to="/logout" className="navLink">
+      <Link to="/logout" onClick={LogOutButtonCkick} className="navLink">
         <img src={logoutIcon} alt="" className="linkIcon" />
         Logout
       </Link>
