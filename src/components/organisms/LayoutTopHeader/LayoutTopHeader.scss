@@ -1,0 +1,36 @@
+.layoutTopHeader {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 0.4rem;
+
+  text-align: center;
+
+  background-color: #920202;
+}
+
+.menuBtn {
+  background-color: #920202;
+}
+
+.layoutTitleContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  align-self: center;
+
+  gap: 0.4rem;
+}
+
+.layoutTitle {
+  color: white;
+
+  font-weight: bolder;
+  font-size: 1.2rem;
+}

@@ -1,22 +1,22 @@
 .dashboardMain {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 
-    padding: 1rem;
+  height: 100vh;
 
-    flex-grow: 1;
+  padding: 1rem;
+
+  flex-grow: 1;
 }
 
 .menuBtn {
-    position: absolute;
+  position: absolute;
 
-    background-color: #920202;
+  background-color: #920202;
 
-    top: 10px;
-    left: 10px;
-    z-index: 1000;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
 }

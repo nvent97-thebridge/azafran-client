@@ -31,21 +31,18 @@ export const MainLayout = ({ mainContent }) => {
   return (
     <>
       {!menuVisible && (
-        <button
-          className="menuBtn"
-          onClick={() => setMenuVisible(true)}
-        >
-          <img src={menuIcon} alt="Open Menu" style={{ width: 24, height: 24 }} />
+        <button className="menuBtn" onClick={() => setMenuVisible(true)}>
+          <img
+            src={menuIcon}
+            alt="Open Menu"
+            style={{ width: 24, height: 24 }}
+          />
         </button>
       )}
 
       {menuVisible && <DashboardHeader onClose={() => setMenuVisible(false)} />}
 
-      <main className="dashboardMain">
-        {mainContent}
-      </main>
+      <main className="dashboardMain">{mainContent}</main>
     </>
   );
 };
-
-
