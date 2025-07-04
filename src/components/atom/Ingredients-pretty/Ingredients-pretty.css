@@ -1,0 +1,36 @@
+.main_ingredient {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 5px;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: #fff;
+  border: none;
+  box-shadow: -0.1px -0.1px 1px #920202, 1.8px 1.8px 0.8px #920202;
+  border-radius: 12px;
+}
+.main_ingredient img {
+  width: 6rem;
+  padding: 5px;
+  background: #fff;
+  border: inherit;
+  border-radius: 100%;
+  box-shadow: -0.1px -0.1px 1.8px #000, 1px 1px 1.4px #000;
+  cursor: pointer;
+}
+.main_ingredient p {
+  min-width: 7rem;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  padding: 5px 10px;
+  margin-top: 0.25rem;
+  background: #920202;
+  color: #fff;
+  box-shadow: -0.1px -0.1px 1.8px #000, 1px 1px 1.4px #000;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0.65px 0.65px 1px #000;
+}/*# sourceMappingURL=Ingredients-pretty.css.map */

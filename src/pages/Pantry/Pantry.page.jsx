@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Ingredient } from "../../components/molecules/Ingredient/Ingredient";
 import { Button } from "../../components/atom/Button/Button";
+import { Ingredients_pretty } from "../../components/atom/Ingredients-pretty/Ingredients-pretty.jsx";
 import "./Pantry.page.css";
 
 const PantryPage = () => {
@@ -19,7 +20,7 @@ const PantryPage = () => {
         if (!res.ok) throw new Error("Error loading ingredients");
         return res.json();
       })
-      .then((data) => setIngredients(data))
+      .then((data) => {setIngredients(data.data);})
       .catch(console.error);
   }, []);
 
@@ -31,8 +32,8 @@ const PantryPage = () => {
           <Button onClick={() => {}}>+ Ingredient</Button>
         </div>
         <div className="pantry-grid">
-          {ingredients.map((ing) => (
-            <Ingredient key={ing.id} name={ing.name} />
+          {ingredients.map((ing, i) => (
+            <Ingredients_pretty key={i} name={ing.name} />
           ))}
         </div>
         <div className="pantry-footer">
