@@ -43,17 +43,6 @@ const Dashboard = () => {
             {ingredients.map((ingredient, index) => {
                 return <Ingredient name={ingredient.name} key={index} />;
             })}
-            <Button type="primary" onClick={handleShowModal}>
-                Abrir Modal
-            </Button>
-            <ModalBase
-                showModal={showModal}
-                handleCancel={handleCancel}
-                handleAccept={handleAccept}
-                title="Agregar ingrediente"
-            >
-                <p>Contenido del ModalBase</p>
-            </ModalBase>
         </Flex>
     );
 };
