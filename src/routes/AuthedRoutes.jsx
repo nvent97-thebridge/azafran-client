@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router";
-
+import { RecipesPage } from "../../src/pages/RecipesPage/RecipesPage";
 import { MainLayout } from "../components/templates/MainLayout/MainLayout";
 import { PantryPage } from "../pages/Pantry/Pantry.page";
 
@@ -14,6 +14,7 @@ export function AuthedRoutes() {
       />
       <Route path="/profile" element={<h1>Profile</h1>} />
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      <Route path="/recipes" element={<RecipesPage />} />
     </Routes>
   );
 }
