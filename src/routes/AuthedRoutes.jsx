@@ -14,7 +14,7 @@ export function AuthedRoutes() {
         element={<MainLayout mainContent={<PantryPage />} />}
       />
       <Route
-        path="/profile" 
+        path="/profile"
         element={<MainLayout mainContent={<Profile />} />}
       />
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
