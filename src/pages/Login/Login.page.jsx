@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Button, Flex, Input, Typography } from "antd";
-import { Title } from "../../components/Title/Title";
+const { Title } = Typography;
 
 const Login = () => {
   const [user, setUser] = useState("");
@@ -10,6 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLoginButtonClick = () => {
+    console.log(user, password);
     fetch("http://localhost:8080/login/", {
       headers: {
         "Content-type": "application/json",
@@ -23,7 +24,7 @@ const Login = () => {
           setErrorMsg(data.msg);
         } else {
           localStorage.setItem("accessToken", data.accessToken)
-          window.location.href = "/";
+          navigate('/');
         }
       })
       .catch((err) => {
@@ -33,7 +34,7 @@ const Login = () => {
 
   return (
     <Flex gap={"8px"} vertical style={{ width: "400px" }}>
-      <Title/>
+      <Title>Login</Title>
       <Input
         value={user}
         onChange={(event) => setUser(event.target.value)}
