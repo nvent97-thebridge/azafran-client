@@ -34,6 +34,7 @@ const PantryPage = () => {
           <h1 className="pantry-title">Pantry</h1>
 
           <Button
+            className="btn-primary"
             onClick={() => {
               setShowAddIngredientModal(true);
             }}
@@ -47,7 +48,9 @@ const PantryPage = () => {
           ))}
         </div>
         <div className="pantry-footer">
-          <Button onClick={() => {}}>Create recipe</Button>
+          <Button className="btn-primary" onClick={() => {}}>
+            Create recipe
+          </Button>
         </div>
         {showAddIngredientModal && (
           <ModalBase
