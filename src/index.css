@@ -32,6 +32,8 @@ body {
   align-items: flex-start;
 
   position: relative;
+
+  width: 100%;
 }
 
 a {
