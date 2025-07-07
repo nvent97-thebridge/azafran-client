@@ -5,9 +5,9 @@ import recipesIcon from "../../../assets/recipesicon.svg";
 import profileIcon from "../../../assets/profileicon.svg";
 import logoutIcon from "../../../assets/logouticon.svg";
 
-import "./DashboardNav.scss";
+import "./SideMenuNav.scss";
 
-export const DashboardNav = () => {
+export const SideMenuNav = () => {
   return (
     <nav className="dashboardNav">
       <Link to="/pantry" className="navLink">

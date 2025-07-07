@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+import { LayoutTopHeader } from "../../organisms/LayoutTopHeader/LayoutTopHeader";
 import { SideMenuHeader } from "../../organisms/SideMenuHeader/SideMenuHeader";
 
 import "./MainLayout.scss";
@@ -10,16 +12,7 @@ export const MainLayout = ({ mainContent }) => {
 
   return (
     <>
-      {!menuVisible && (
-        <button className="menuBtn" onClick={() => setMenuVisible(true)}>
-          <img
-            src={menuIcon}
-            alt="Open Menu"
-            style={{ width: 24, height: 24 }}
-          />
-        </button>
-      )}
-
+      <LayoutTopHeader setMenuVisible={setMenuVisible} />
       {menuVisible && <SideMenuHeader onClose={() => setMenuVisible(false)} />}
 
       <main className="dashboardMain">{mainContent}</main>
