@@ -1,65 +1,25 @@
-import { Button, Flex, Input, Typography } from "antd";
-import { useNavigate } from "react-router";
 import { useState } from "react";
-const { Title } = Typography;
+import { useForm } from "react-hook-form";
+import { Button, Flex, Input, Typography } from "antd";
 
-const Register = () => {
-  const navigate = useNavigate();
-
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
-
-  const isButtonEnabled =
-    user && password && repeatPassword && password == repeatPassword;
-
-  const handleRegisterButtonClick = () => {
-    fetch("http://localhost:8080/register/", {
-      headers: {
-        "Content-type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({ username: user, password: password }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          navigate("/login");
-        } else {
-          console.error("error found", res.body);
-        }
-      })
-      .catch((err) => console.error(err));
-  };
+function Register() {
+  const { register, handleSubmit } = useForm();
+  const [data, setData] = useState("");
 
   return (
     <Flex gap={"8px"} vertical style={{ width: "400px" }}>
-      <Title>Register</Title>
-      <Input
-        value={user}
-        onChange={(event) => setUser(event.target.value)}
-        placeholder="Usuario"
-      />
-      <Input
-        placeholder="Contraseña"
-        type="password"
-        value={password}
-        onChange={(event) => setPassword(event.target.value)}
-      />
-      <Input
-        placeholder="Repetir contraseña"
-        type="password"
-        value={repeatPassword}
-        onChange={(event) => setRepeatPassword(event.target.value)}
-      />
-      <Button
-        disabled={!isButtonEnabled}
-        type="primary"
-        onClick={handleRegisterButtonClick}
-      >
-        Register
-      </Button>
+      <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+        <input {...register("firstName")} placeholder="First name" />
+        <select {...register("category", { required: true })}>
+          <option value="">Select...</option>
+          <option value="Admin">Admin</option>
+          <option value="Employee">Employee</option>
+        </select>
+        <textarea {...register("aboutYou")} placeholder="About you" />
+        <p>{data}</p>
+        <input type="submit" />
+      </form>
     </Flex>
   );
-};
-
-export { Register };
+}
+export { Register }

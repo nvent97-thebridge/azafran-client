@@ -9,8 +9,8 @@ import "./DashboardNav.scss";
 
 const LogOutButtonCkick = () => {
   localStorage.clear();
-  navigate("/login")
-}
+  navigate("/login");
+};
 export const DashboardNav = () => {
   return (
     <nav className="dashboardNav">
