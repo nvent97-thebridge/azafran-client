@@ -22,4 +22,4 @@ function Register() {
     </Flex>
   );
 }
-export { Register }
+export { Register };
